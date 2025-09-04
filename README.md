@@ -176,7 +176,7 @@ Notes
 
 ---
 
-## Coût Total de Possession (Approximatif, Mensuel)
+## Coût Total (Approximatif, Mensuel)
 
 | Plateforme | Coût Logiciel | Stockage Supplémentaire | Total Mensuel |
 |----------|----------------|--------------------|--------------------|
