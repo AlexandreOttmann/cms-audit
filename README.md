@@ -8,19 +8,16 @@
   1) Storyblok, 2) Sanity, 3) Strapi, 4) Prismic, 5) Directus
 
 ### Video walkthroughs (for stakeholders)
-- General presentation (embedded)
-  
-<div style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe src="https://www.loom.com/embed/0ceef9bd79004e9a849075daefb46797?sid=54e6d5b7-f291-4748-b2d8-b9d45c4b0694" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
-  
-  Fallback link: [Loom video](https://www.loom.com/share/0ceef9bd79004e9a849075daefb46797?sid=735d61d4-621b-4079-8ccf-edebd5a7a0e9)
-  
-  Source: [Loom](https://www.loom.com/share/0ceef9bd79004e9a849075daefb46797?sid=735d61d4-621b-4079-8ccf-edebd5a7a0e9)
-- Sanity (2 short videos): see the Loom folder
-  - Link: [Loom folder](https://loom.com/share/folder/f95792d3fc724895bf343113d82456e9)
-- Storyblok (1 video): see the Loom folder
-  - Link: [Loom folder](https://loom.com/share/folder/f95792d3fc724895bf343113d82456e9)
-- Strapi (2 short videos): see the Loom folder
-  - Link: [Loom folder](https://loom.com/share/folder/f95792d3fc724895bf343113d82456e9)
+- General presentation: 
+  - Présentation de Strapi et démonstration des fonctionnalités 🚀: [Lien 1](https://www.loom.com/share/d2bf360930624131a3bb8e7db5d8605b?sid=5ff60fd0-e492-4a6d-b28f-fda1799c3c9f)
+- Sanity (2 short videos): 
+  - Link 1: [Video présentation](https://www.loom.com/share/aaa76c2baeae48a28b96bc1f0998ec95?sid=e94cd11b-3a75-4823-b7a8-7848da34dc6e)
+  - Link 2: [Vidéo complémentaire](https://www.loom.com/share/d73c2ae76ec14ee19072f56598fe4e61?sid=147ecda8-9d35-4441-9bb5-43956b6c8613)
+- Storyblok (1 video): 
+  - Link: [Video présentation](https://www.loom.com/share/1f5f2c0f90724f19b6bc53fc94c65a6b?sid=637b7e78-4210-4c88-9d55-2214d8302c9c)
+- Strapi (2 short videos): 
+  - Link: [Video présentation](https://www.loom.com/share/0ceef9bd79004e9a849075daefb46797?sid=a6233219-8a8e-47ae-a780-23b88f5974a5)
+  - Link: [Video complémentaire](https://www.loom.com/share/373e7c2bc7484c9a8fccb3ddb4167b01?sid=8dab5287-3d6f-48cf-b1ea-599722d730eb)
 
 Note: If you want inline embeds, share each specific Loom video URL and we’ll replace the folder links with embedded players.
 
@@ -219,5 +216,7 @@ Next steps
 - Confirm budget approvals and plan the migration (3–6 weeks typical)
 
 ---
+
+If you share a bit more about your localization needs, team roles, and expected content growth this year, we can lock the final choice and draft the implementation plan (preview, roles, content model, and migration runbook).
 
 
