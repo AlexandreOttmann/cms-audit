@@ -1,9 +1,7 @@
-# Recommandation CMS pour Votre Agence de Voyage
+# Recommandation CMS pour Odysway
 
-## Résumé Exécutif 
+## Résumé
 Nous souhaitions recommander un CMS moderne, effectuer un comparatif pertinent entre les principaux CMS ressortant sur le marché actuellement.
-
----
 
 ## PainPoints Actuels 
 - Publication lente (constructions de sites statiques, déploiements longs)
@@ -24,7 +22,6 @@ Vidéo de présentation de l'audit 🚀: [Lien 1](https://www.loom.com/share/d2b
 - Deux meilleures options globales : Storyblok (le plus visuel, le plus facile pour les éditeurs) et Sanity (le plus flexible et évolutif pour les développeurs et équipes d'Odysway, moins cher, moins complexe).
 - Classement mis à jour (basé sur vos besoins et budget) :
   1) Sanity, 2) StoryBlok, 3) Strapi, 4) Prismic, 5) Directus
-
 
 ### Pourquoi ces trois ?
 - Storyblok : édition vraiment visuelle (ce‑que‑vous‑voyez‑est‑ce‑que‑vous‑obtenez), excellent pour le marketing et les pages d'atterrissage.
