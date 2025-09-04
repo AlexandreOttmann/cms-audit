@@ -10,16 +10,7 @@
 ### Video walkthroughs (for stakeholders)
 - General presentation (embedded)
   
-  <div style="position: relative; padding-bottom: 56.25%; height: 0;">
-    <iframe
-      src="https://www.loom.com/embed/0ceef9bd79004e9a849075daefb46797?sid=735d61d4-621b-4079-8ccf-edebd5a7a0e9"
-      frameborder="0"
-      webkitallowfullscreen
-      mozallowfullscreen
-      allowfullscreen
-      style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 12px;"
-    ></iframe>
-  </div>
+<div style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe src="https://www.loom.com/embed/0ceef9bd79004e9a849075daefb46797?sid=54e6d5b7-f291-4748-b2d8-b9d45c4b0694" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
   
   Fallback link: [Loom video](https://www.loom.com/share/0ceef9bd79004e9a849075daefb46797?sid=735d61d4-621b-4079-8ccf-edebd5a7a0e9)
   
@@ -228,7 +219,5 @@ Next steps
 - Confirm budget approvals and plan the migration (3–6 weeks typical)
 
 ---
-
-If you share a bit more about your localization needs, team roles, and expected content growth this year, we can lock the final choice and draft the implementation plan (preview, roles, content model, and migration runbook).
 
 
