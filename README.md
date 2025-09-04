@@ -1,7 +1,11 @@
-# Recommandation CMS pour Odysway
+# Recommandation CMS pour Votre Agence de Voyage
 
-## Résumé
+## Résumé Exécutif 
 Nous souhaitions recommander un CMS moderne, effectuer un comparatif pertinent entre les principaux CMS ressortant sur le marché actuellement.
+Cet audit se présente en 2 parties : 
+- Un comparatif des CMS, 
+- une partie sur les optimisations / évolution possible en gardant Nuxt Content/Studio.
+---
 
 ## PainPoints Actuels 
 - Publication lente (constructions de sites statiques, déploiements longs)
@@ -9,6 +13,7 @@ Nous souhaitions recommander un CMS moderne, effectuer un comparatif pertinent e
 - Contenu riche limité (difficile d'intégrer des galeries, cartes ou blocs complexes), pas de champs de texte riche (avec de l'édition de texte)
 - Aucun moyen facile de lier le contenu (ex : Voyage ↔ Destination ↔ Thématique)
 - Pas de log d'erreur convenable (le site peut planter sans message, warning préalable)
+- Compliqué/impossible d'éditer en même temps et de manière indépendante les fichiers
 
 Ce dont vous avez besoin à la place : aperçu/publication instantanés, texte riche avec médias/blocs intégrés, interface d'édition conviviale, et relations de première classe entre contenus.
 CMS AUDITÉS ET TESTÉS : [Sanity](https://www.sanity.io/), [Storyblok](https://www.storyblok.com/), [Strapi](https://strapi.io/), [Prismic](https://prismic.io/), [Directus](https://directus.io/)
@@ -19,12 +24,13 @@ Vidéo de présentation de l'audit 🚀: [Lien 1](https://www.loom.com/share/d2b
 
 ## TL;DR 
 - Vous souhaitez un CMS moderne avec publication rapide, contenu riche (images, blocs, relations), et une expérience d'édition que les non‑développeurs peuvent utiliser confortablement.
-- Deux meilleures options globales : Storyblok (le plus visuel, le plus facile pour les éditeurs) et Sanity (le plus flexible et évolutif pour les développeurs et équipes d'Odysway, moins cher, moins complexe).
+- Trois meilleures options globales : Sanity (le plus flexible et évolutif pour les développeurs et équipes d'Odysway, moins cher, moins complexe), Storyblok (le plus visuel, le plus facile pour les éditeurs) et Strapi (le plus solide d'auto‑hébergement ou cloud avec relations fortes et rôles ; ressemble à un CMS traditionnel).
 - Classement mis à jour (basé sur vos besoins et budget) :
   1) Sanity, 2) StoryBlok, 3) Strapi, 4) Prismic, 5) Directus
 
+
 ### Pourquoi ces trois ?
-- Storyblok : édition vraiment visuelle (ce‑que‑vous‑voyez‑est‑ce‑que‑vous‑obtenez), excellent pour le marketing et les pages d'atterrissage.
+- Storyblok : édition vraiment visuelle (ce‑que‑vous‑voyez‑est‑ce‑que‑vous‑obtenez), excellent pour le marketing et les landing pages.
 - Sanity : modélisation de contenu puissante et relations, texte riche avec blocs intégrés, excellente intégration Nuxt et aperçus rapides.
 - Strapi : option solide d'auto‑hébergement ou cloud avec relations fortes et rôles ; ressemble à un CMS traditionnel.
 
@@ -176,12 +182,12 @@ Notes
 
 ---
 
-## Coût Total (Approximatif, Mensuel)
+## Coût Total de Possession (Approximatif, Mensuel)
 
 | Plateforme | Coût Logiciel | Stockage Supplémentaire | Total Mensuel |
 |----------|----------------|--------------------|--------------------|
-| Storyblok | ~330€ | Inclus | ~330€ |
 | Sanity | ~150€ | ~20–30€ | ~170–180€ |
+| Storyblok | ~330€ | Inclus | ~330€ |
 | Strapi (Cloud) | 99–499$ | Varie | 99–499$ |
 | Prismic | ~450€ | Inclus | ~450€ |
 | Directus (Cloud) | ~349$ | Inclus | ~349$ |
@@ -216,6 +222,117 @@ Tâches de migration clés
 5) Directus — Meilleur si vous êtes vraiment pilotés par base de données et moins axés sur la construction de pages marketing/éditoriales.
 
 ---
+
+## Contre-Recommandation, garder l'utilisation de Nuxt Content
+
+### Pourquoi considérer garder Nuxt Content ?
+
+**Avantages de la solution actuelle à court/moyen terme :**
+- **Coût zéro** : Aucun abonnement mensuel quand Nuxt Content/Studio sera passé en open source (fin d'année 2025), aucune limite d'utilisateurs
+- **Contrôle total** : Possibilité de personnaliser entièrement l'expérience (Interface d'édition, workflow, etc...)
+- **Nuxt Studio open source** : Possibilité de fork et personnalisation complète
+- **Intégration native** : Déjà configuré et fonctionnel dans votre projet...
+- **Performance** : Génération statique native, le site est déjà très rapide, une solution par api externe pourra le ralentir.
+
+---
+### Analyse des points de douleur actuels et solutions
+
+#### 1. Publication lente → Implémentation ISR (Incremental Static Regeneration)
+**Solution technique :**
+- Mise en place d'ISR avec revalidation automatique
+- Passage du SSR (Server-Side Rendering) actuel à l'ISR (Incremental Static Regeneration): au lieu de regénérer toutes les pages à chaque déploiement, l'ISR permet de mettre à jour uniquement les pages modifiées et de servir les autres depuis un cache, réduisant le temps de déploiement de plusieurs minutes à ~30-60 secondes normalement.
+
+#### 2. Interface d'édition technique → Optimisation de Nuxt Studio
+**Avantages du fork open source qui devrait se dérouler en fin d'année 2025 :**
+- Personnalisation complète de l'interface utilisateur
+- Pouvoir répondre exactement à vos besoins en full customisation
+- Ajout de composants d'édition visuels, editeur de texte riche simplifiés...
+- Workflows de validation personnalisés
+
+#### 3. Optimisation Vercel pour le déploiement
+**Stratégies de réduction du temps de build :**
+- **Build caching** : Réduction de 40-60% du temps de build
+- **Parallel builds** : Déploiements simultanés, les limiter à la prod et preprod. Empêchant le spam de builds et le queueing.
+- **Estimation gain de temps (non testé) : 3-5 minutes → 1-2 minutes voir moins**
+
+#### 4. Limitation de l'édition simultanée des fichiers
+**Remise en question :**
+Est-ce vraiment un problème ?
+Actuellement il y a rarement la création d'un nouveau voyage, d'une nouvelle donnée. Il s'agit principalement de modifications légères sur les voyages, destinations, experiences, etc...
+Si vous souhaitez créer un nouveau voyage, vous pouvez dupliquer et rapidement éditer celui-ci. Est-ce vraiment nécessaire d'avoir de l'édition simultanée des fichiers et une vitesse de déploiement rapide ?
+Sur les dernières semaines, le nombre de grosses modifications a été relativement faible et il s'agissait principalement de modifications d'un champs à la fois ou d'un texte, l'ajout d'une destination...
+
+**Solution technique une fois que Nuxt Content/Studio sera passé en open source :**
+- Ajout d'un système de notification lors de l'édition simultanée des fichiers
+- Ajout d'un système de validation des fichiers, gestion d'erreurs, logs, etc...
+- Ajout d'un système de rollback des fichiers, d'un état de draft / publication
+- Ajout de la possibilité d'éditer en même temps et de manière indépendante les fichiers
+- Ajout de la possibilité de publier individuellement des modifications
+**Remarque :**
+- Estimation temps de mise en place : 2 mois de développement
+
+
+### Plan d'optimisation Nuxt Content (Alternative)
+
+#### Phase 1 : Optimisation immédiate (1 semaine)
+- [ ] Configuration ISR pour toutes les pages dynamiques
+- [ ] Optimisation des builds Vercel
+- [ ] Mise en place du cache intelligent
+
+#### Phase 2 : Amélioration de l'expérience éditeur (2-3 semaines)
+- [ ] Fork et personnalisation de Nuxt Studio
+- [ ] Ajout de composants d'édition visuels, editeur de texte riche simplifiés...
+- [ ] Workflows de validation personnalisés
+- [ ] Interface d'aperçu en temps réel
+
+
+### Risques et limitations de l'approche Nuxt Content
+
+**Risques :**
+- **Dépendance technique** : Équipe doit maintenir les optimisations
+- **Complexité** : Plus de code à maintenir vs solution SaaS
+- **Évolutivité** : Limites techniques de Nuxt Content pour très gros volumes
+
+**Limitations actuelles :**
+- Pas de relations complexes natives entre contenus (possibilité d'évolution future)
+- Interface d'édition moins intuitive que les CMS spécialisés
+- Gestion des médias basique
+
+### Recommandation finale révisée
+
+**Pour votre cas d'usage actuel, nous recommandons :**
+
+1. **Court terme (1-2 mois)** : Optimiser Nuxt Content avec ISR et Vercel
+   - Coût : sur devis
+   - Gain immédiat : Déploiements 3-5x plus rapides
+   - Risque : Faible
+
+2. **Moyen terme (3ème mois)** : Évaluer si les optimisations suffisent
+   - Si oui : Continuer avec Nuxt Content
+   - Si non : Migrer vers Sanity (notre recommandation principale)
+
+3. **Long terme** : Considérer la migration uniquement si :
+   - L'équipe éditoriale dépasse 15-20 personnes
+   - Les besoins de relations entre contenus deviennent critiques
+   - Trop de frictions sur les workflows d'édition, l'utilisation de Nuxt Studio
+
+### Conclusion
+
+**Garder Nuxt Content est économiquement avantageux** si vous acceptez :
+- Un nouvel investissement initial de 2-3 semaines de développement
+- Une maintenance technique continue
+- Des limitations fonctionnelles sur les relations complexes
+- Vous acceptez finalement la limitation de l'édition simultanée des fichiers à court/moyen terme
+
+**La migration vers un CMS externe est justifiée** si vous préférez :
+- (A court terme) Une solution plus performante en terme de workflows et développement et plus stable
+- Une solution clé en main sans maintenance technique
+- Des fonctionnalités avancées immédiatement disponibles (relations complexes, édition simultanée, traduction IA, etc...)
+- Une équipe éditoriale importante (>15 personnes)
+- Souhaitez absolument pour éditer en même temps et de manière indépendante les fichiers
+- Avoir un contrôle total sur l'expérience d'édition
+
+**Notre recommandation : Commencer par l'optimisation Nuxt Content** pour valider que cela répond à 80% de vos besoins, puis réévaluer dans 3mois selon l'évolution de votre équipe et de vos besoins.
 
 
 
