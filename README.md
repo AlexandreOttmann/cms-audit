@@ -332,7 +332,9 @@ Sur les dernières semaines, le nombre de grosses modifications a été relative
 - Souhaitez absolument pour éditer en même temps et de manière indépendante les fichiers
 - Avoir un contrôle total sur l'expérience d'édition
 
-**Notre recommandation : Commencer par l'optimisation Nuxt Content** pour valider que cela répond à 80% de vos besoins, puis réévaluer dans 3mois selon l'évolution de votre équipe et de vos besoins.
+**Notre recommandation :** 
+- Si vous estimez que le déploiement instantané et l'édition simultanée des fichiers par plusieurs personnes sont une priorité par dessus le reste, et les coûts actuels tout en ayant en tête le prix de la migration vers un CMS externe, alors migrer vers Sanity ou Storyblok.
+- Sinon commencer par l'optimisation Nuxt Content pour valider que cela répond à 80% de vos besoins, puis réévaluer dans 3mois selon l'évolution de votre équipe et de vos besoins et décider de migrer vers un CMS externe ou non.
 
 
 
